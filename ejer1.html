@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saludo Component</title>
+    <style>
+        /* Estilos globales para el cuerpo del documento */
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        /* Estilos específicos del componente utilizando Shadow DOM */
+        saludo-component {
+            display: block;
+            background-color: #df1141;
+            color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        /* Definición de la animación */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        .regresar{
+            margin-top: 20rem;
+        }
+    </style>
+</head>
+
+
+<body>
+    
+    
+    <!-- Uso del componente saludo-component -->
+    <saludo-component></saludo-component>
+
+    <!-- Definición del componente web -->
+    <script>
+        class SaludoComponent extends HTMLElement {
+            constructor() {
+                super();
+                // Crear un shadow root
+                this.attachShadow({ mode: 'open' });
+
+                // Contenido del Shadow DOM
+                this.shadowRoot.innerHTML = `
+                    <style>
+                        /* Estilos específicos del componente en el Shadow DOM */
+                        p {
+                            margin: 0;
+                            font-size: 24px;
+                        }
+                    </style>
+                    <p>¡Hola, Mundo!</p>
+                `;
+            }
+        }
+
+        // Definir el componente custom element
+        customElements.define('saludo-component', SaludoComponent);
+    </script>
+
+<a class="regresar" href="index.html">Regresar</a>
+</body>
+
+</html>

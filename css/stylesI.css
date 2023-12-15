@@ -1,0 +1,47 @@
+* {
+  background-color: #f7f7f7; /* Fondo general */
+}
+
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.counter-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff; /* Fondo del contenedor principal */
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Sutil sombra */
+  margin: 0 auto;
+}
+
+.counter-container p {
+  font-size: 3em;
+  margin: 0;
+}
+
+.counter-container button {
+  background-color: #3498db; /* Color del botón */
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 2em;
+  margin: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1); /* Sutil sombra */
+  transition: all 0.2s ease-in-out;
+}
+
+.counter-container button:hover {
+  background-color: #2980b9; /* Cambio de color al pasar el mouse */
+}
